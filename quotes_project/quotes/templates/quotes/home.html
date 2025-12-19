@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Quotes Home</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a4cccbf7;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            list-style: none;
+            box-shadow: 0 2px 5px rgba(35, 89, 165, 0.1);
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Quotes List</h1>
+
+{% if quotes %}
+    <ul>
+        {% for q in quotes %}
+            <li>"{{ q.text }}" — {{ q.author }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No quotes added yet.</p>
+{% endif %}
+
+</body>
+</html>
